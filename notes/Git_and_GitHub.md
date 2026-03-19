@@ -28,9 +28,9 @@ This sounds scary. It's not. Let's break it down.
 
 ```mermaid
 graph LR
-    A["📄 Commit 1<br/>Initial project"]:::commit1 --> B["📄 Commit 2<br/>Added login page"]:::commit2
-    B --> C["📄 Commit 3<br/>Fixed bug in login"]:::commit3
-    C --> D["📄 Commit 4<br/>Added dashboard"]:::commit4
+    A["Commit 1<br/>Initial project"]:::commit1 --> B["Commit 2<br/>Added login page"]:::commit2
+    B --> C["Commit 3<br/>Fixed bug in login"]:::commit3
+    C --> D["Commit 4<br/>Added dashboard"]:::commit4
 
     classDef commit1 fill:#FF6B6B,stroke:#333,color:#fff,font-weight:bold
     classDef commit2 fill:#4ECDC4,stroke:#333,color:#fff,font-weight:bold
@@ -48,10 +48,10 @@ Each commit is a **snapshot** of your entire project at that moment. Git doesn't
 
 ```mermaid
 graph TB
-    WD["🗂️ Working Directory<br/>Your actual files on disk"]:::wd
-    SA["📋 Staging Area<br/>Files ready to be committed"]:::stage
-    LR["💾 Local Repository<br/>Your commit history (.git folder)"]:::local
-    RR["☁️ Remote Repository<br/>GitHub / GitLab"]:::remote
+    WD["Working Directory<br/>Your actual files on disk"]:::wd
+    SA["Staging Area<br/>Files ready to be committed"]:::stage
+    LR["Local Repository<br/>Your commit history - .git folder"]:::local
+    RR["Remote Repository<br/>GitHub / GitLab"]:::remote
 
     WD -->|"git add"| SA
     SA -->|"git commit"| LR
@@ -91,9 +91,9 @@ git commit -m "Initial commit: add README"
 
 ```mermaid
 graph LR
-    A["🟢 Initial commit<br/>add README"]:::c1
-    HEAD["🏷️ HEAD"]:::head --> A
-    MAIN["🏷️ main"]:::branch --> A
+    A["Initial commit<br/>add README"]:::c1
+    HEAD["HEAD"]:::head --> A
+    MAIN["main"]:::branch --> A
 
     classDef c1 fill:#6BCB77,stroke:#333,color:#fff,font-weight:bold
     classDef head fill:#FF6B6B,stroke:#333,color:#fff,font-weight:bold
@@ -115,9 +115,9 @@ git commit -m "Add basic add function"
 
 ```mermaid
 graph LR
-    A["🟢 Initial commit"]:::c1 --> B["🟢 Add basic<br/>add function"]:::c2
-    HEAD["🏷️ HEAD"]:::head --> B
-    MAIN["🏷️ main"]:::branch --> B
+    A["Initial commit"]:::c1 --> B["Add basic<br/>add function"]:::c2
+    HEAD["HEAD"]:::head --> B
+    MAIN["main"]:::branch --> B
 
     classDef c1 fill:#4ECDC4,stroke:#333,color:#fff,font-weight:bold
     classDef c2 fill:#6BCB77,stroke:#333,color:#fff,font-weight:bold
@@ -143,11 +143,11 @@ git commit -m "Add multiply function"
 
 ```mermaid
 graph LR
-    A["🟢 C1<br/>Initial commit"]:::c1 --> B["🟢 C2<br/>Add add()"]:::c2
-    B --> C["🟢 C3<br/>Add subtract()"]:::c3
-    C --> D["🟢 C4<br/>Add multiply()"]:::c4
-    HEAD["🏷️ HEAD"]:::head --> D
-    MAIN["🏷️ main"]:::branch --> D
+    A["C1<br/>Initial commit"]:::c1 --> B["C2<br/>Add add fn"]:::c2
+    B --> C["C3<br/>Add subtract fn"]:::c3
+    C --> D["C4<br/>Add multiply fn"]:::c4
+    HEAD["HEAD"]:::head --> D
+    MAIN["main"]:::branch --> D
 
     classDef c1 fill:#845EC2,stroke:#333,color:#fff,font-weight:bold
     classDef c2 fill:#4ECDC4,stroke:#333,color:#fff,font-weight:bold
@@ -187,11 +187,11 @@ Now your entire graph (C1 → C2 → C3 → C4) is on GitHub too!
 
 ```mermaid
 graph TB
-    subgraph Your_Laptop["💻 Your Laptop"]
-        GIT["🔧 Git<br/>Tracks changes locally"]:::git
+    subgraph Your_Laptop["Your Laptop"]
+        GIT["Git<br/>Tracks changes locally"]:::git
     end
-    subgraph Cloud["☁️ The Internet"]
-        GH["🐙 GitHub<br/>Stores repos online"]:::github
+    subgraph Cloud["The Internet"]
+        GH["GitHub<br/>Stores repos online"]:::github
     end
 
     GIT -->|"git push"| GH
@@ -218,13 +218,13 @@ A **branch** is a separate line of work. You create a branch, make changes, and 
 
 ```mermaid
 graph LR
-    A["🟢 C1"]:::c1 --> B["🟢 C2"]:::c2
-    B --> C["🟢 C3"]:::c3
-    C --> D["🟢 C4<br/>main"]:::c4
+    A["C1"]:::c1 --> B["C2"]:::c2
+    B --> C["C3"]:::c3
+    C --> D["C4<br/>main"]:::c4
 
-    B --> E["🟡 C5<br/>new feature"]:::feat1
-    E --> F["🟡 C6<br/>feature done"]:::feat2
-    F --> G["🟢 C7<br/>Merged!"]:::merge
+    B --> E["C5<br/>new feature"]:::feat1
+    E --> F["C6<br/>feature done"]:::feat2
+    F --> G["C7<br/>Merged!"]:::merge
     D --> G
 
     classDef c1 fill:#845EC2,stroke:#333,color:#fff,font-weight:bold
@@ -246,15 +246,15 @@ This is exactly what you do for AI-Adventure assignments:
 
 ```mermaid
 graph TB
-    ORIG["🏠 Original Repo<br/>infinitethoughts7/ai-adventure"]:::orig
-    FORK["🍴 Your Fork<br/>yourname/ai-adventure"]:::fork
-    LOCAL["💻 Your Computer<br/>Local clone"]:::local
+    ORIG["Original Repo<br/>infinitethoughts7/ai-adventure"]:::orig
+    FORK["Your Fork<br/>yourname/ai-adventure"]:::fork
+    LOCAL["Your Computer<br/>Local clone"]:::local
 
-    ORIG -->|"1. Fork<br/>(on GitHub)"| FORK
-    FORK -->|"2. Clone<br/>(to your laptop)"| LOCAL
-    LOCAL -->|"3. Push<br/>(your changes)"| FORK
-    FORK -->|"4. Pull Request<br/>(ask to merge)"| ORIG
-    ORIG -->|"5. Trainer merges ✅"| ORIG
+    ORIG -->|"1. Fork<br/>on GitHub"| FORK
+    FORK -->|"2. Clone<br/>to your laptop"| LOCAL
+    LOCAL -->|"3. Push<br/>your changes"| FORK
+    FORK -->|"4. Pull Request<br/>ask to merge"| ORIG
+    ORIG -->|"5. Trainer merges"| ORIG
 
     classDef orig fill:#FF6B6B,stroke:#333,color:#fff,font-weight:bold
     classDef fork fill:#FFD93D,stroke:#333,color:#333,font-weight:bold
@@ -346,10 +346,10 @@ git merge feature-name
 
 ```mermaid
 graph LR
-    U["📝 Untracked<br/>New file, Git<br/>doesn't know it"]:::untracked
-    M["✏️ Modified<br/>Changed but<br/>not staged"]:::modified
-    S["📋 Staged<br/>Ready to<br/>be committed"]:::staged
-    C["✅ Committed<br/>Safely saved<br/>in Git history"]:::committed
+    U["Untracked<br/>New file, Git<br/>doesn't know it"]:::untracked
+    M["Modified<br/>Changed but<br/>not staged"]:::modified
+    S["Staged<br/>Ready to<br/>be committed"]:::staged
+    C["Committed<br/>Safely saved<br/>in Git history"]:::committed
 
     U -->|"git add"| S
     M -->|"git add"| S
@@ -409,17 +409,17 @@ git diff
 
 ```mermaid
 graph TB
-    subgraph YOU["🧑‍💻 What You Do"]
+    subgraph YOU["What You Do"]
         direction TB
         W["Write Code"]:::you --> A["git add"]:::you --> C["git commit"]:::you --> P["git push"]:::you --> PR["Pull Request"]:::you
     end
 
-    subgraph GIT["🔧 What Git Does"]
+    subgraph GIT["What Git Does"]
         direction TB
         T["Tracks every change"]:::git --> S["Stores full history"]:::git --> B["Allows branching"]:::git --> M["Enables merging"]:::git
     end
 
-    subgraph GITHUB["🐙 What GitHub Does"]
+    subgraph GITHUB["What GitHub Does"]
         direction TB
         H["Hosts your code online"]:::gh --> CO["Enables collaboration"]:::gh --> PO["Shows your portfolio"]:::gh --> RE["Code review via PRs"]:::gh
     end
@@ -431,4 +431,4 @@ graph TB
 
 ---
 
-> **Remember:** Every expert was once a beginner who refused to give up. You've got this! 💪
+> **Remember:** Every expert was once a beginner who refused to give up. You've got this.
